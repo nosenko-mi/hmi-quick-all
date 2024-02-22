@@ -21,8 +21,9 @@ Window {
             height: 150
             color: "#880000"
             Text {
-                text: "#880000"
+                text: "6.1210-1пі"
                 anchors.centerIn: parent
+                color: "white"
             }
 
 
@@ -37,8 +38,15 @@ Window {
             color: "#ff0000"
 
             Text {
-                text: "#ff0000"
+                text: '<html><style type="text/css"></style><a href="https://www.qt.io/">https://www.qt.io/</a></html>'
                 anchors.centerIn: parent
+                onLinkActivated: Qt.openUrlExternally(link)
+                        MouseArea {
+                            id: mouseArea
+                            anchors.fill: parent
+                            acceptedButtons: Qt.NoButton
+                            cursorShape: Qt.PointingHandCursor
+                        }
             }
         }
 
@@ -66,8 +74,12 @@ Window {
             color: "#008800"
 
             Text {
-                text: "#008800"
-                anchors.centerIn: parent
+                width: parent.width
+                height: parent.height
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nisl quis elit convallis auctor. Nunc felis sem, fermentum in sagittis ac, elementum et urna. Vivamus at pretium erat, sit amet dapibus ante. "
+                horizontalAlignment: Text.AlignRight
+                wrapMode: Text.Wrap
+                color: "white"
             }
         }
 
@@ -78,13 +90,19 @@ Window {
             anchors.verticalCenter: parent.verticalCenter
             width: 150
             height: 150
-            rotation: 45
+            rotation: -45
             color: "royalblue"
             radius:25
 
             Text {
-                text: "color: royalblue\nradius: 25\nrotation: 45"
-                anchors.centerIn: parent
+                width: parent.width
+                height: parent.height
+                text: "Носенко Микола Іванович"
+                font.bold: true
+                font.pointSize: 20
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
             }
         }
     }
