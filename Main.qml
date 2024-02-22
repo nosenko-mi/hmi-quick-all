@@ -1,36 +1,92 @@
 import QtQuick
 
-// 1. Створити новий проект Qt Quick.
-// 2. Змінити його таким чином, щоб головне вікно містило інформації про
-// студента, який виконав роботу: прізвище, ім’я та по-батькові – напівжирний
-// зелений текст; номер групи – курсив фіолетового кольору
-
 Window {
     id: window
     width: 640
     height: 480
     visible: true
-    title: qsTr("Lr 1")
+    title: qsTr("Lr 7")
+    minimumHeight: 300
+    minimumWidth: 300
 
-    Column{
-        spacing: 20
-        width: window.width
-        anchors.verticalCenter: parent.verticalCenter
-        Text {
-            id: nameText
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Носенко Микола Іванович")
-            color: "green"
-            font { pixelSize: 20; bold: true}
+    Item {
+        id: container
+        anchors.fill: parent
+        Rectangle {
+            id: topLeftRect
+            anchors.left: parent.left
+            anchors.top: parent.top
+
+            width: 150
+            height: 150
+            color: "#880000"
+            Text {
+                text: "#880000"
+                anchors.centerIn: parent
+            }
+
+
         }
-        Text {
-            id: groupText
+
+        Rectangle {
+            id: topRightRect
+            anchors.right: parent.right
+            anchors.top: parent.top
+            width: 150
+            height: 150
+            color: "#ff0000"
+
+            Text {
+                text: "#ff0000"
+                anchors.centerIn: parent
+            }
+        }
+
+        Rectangle {
+            id: bottomLeftRect
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+
+            width: 150
+            height: 150
+            color: "#00ff00"
+
+            Text {
+                text: "#00ff00"
+                anchors.centerIn: parent
+            }
+        }
+
+        Rectangle {
+            id: bottomRightRect
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            width: 150
+            height: 150
+            color: "#008800"
+
+            Text {
+                text: "#008800"
+                anchors.centerIn: parent
+            }
+        }
+
+
+        Rectangle {
+            id: centerRect
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("6.1210-1пі")
-            color: "purple"
-            font { pixelSize: 16; italic: true}
+            anchors.verticalCenter: parent.verticalCenter
+            width: 150
+            height: 150
+            rotation: 45
+            color: "royalblue"
+            radius:25
+
+            Text {
+                text: "color: royalblue\nradius: 25\nrotation: 45"
+                anchors.centerIn: parent
+            }
         }
     }
-
 
 }
